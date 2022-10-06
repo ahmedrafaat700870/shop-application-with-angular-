@@ -1,0 +1,110 @@
+<!--section start-->
+<section class="cart-section section-b-space">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <table class="table cart-table table-responsive-xs">
+          <thead>
+            <tr class="table-head">
+              <th scope="col">image</th>
+              <th scope="col">product name</th>
+              <th scope="col">price</th>
+              <th scope="col">quantity</th>
+              <th scope="col">action</th>
+              <th scope="col">total</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let item of Cart?.items">
+            <tr>
+              <td>
+                <!--  <a routerLink><img [src]="item.imageName" alt="photo" /></a> -->
+                <a routerLink="/ProductDetails/{{ item.itemId }}"
+                  ><img src="../assets/images/pro3/1.jpg" alt="photo"
+                /></a>
+              </td>
+              <td>
+                <a routerLink="/ProductDetails/{{ item.itemId }}">{{
+                  item.itemName | uppercase
+                }}</a>
+                <div class="mobile-cart-content row">
+                  <div class="col-xs-3">
+                    <div class="qty-box">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          name="quantity"
+                          class="form-control input-number"
+                          [value]="item.itemCount"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <h2 class="td-color">{{ item.itemPrice | currency }}</h2>
+                  </div>
+                  <div class="col-xs-3">
+                    <h2 class="td-color">
+                      <a href="#" class="icon"><i class="ti-close"></i></a>
+                    </h2>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <h2>{{ item.itemPrice | currency }}</h2>
+              </td>
+              <td>
+                <div class="qty-box">
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      name="quantity"
+                      class="form-control input-number"
+                      [value]="item.itemCount"
+                    />
+                  </div>
+                  <button
+                    [id]="item.itemId"
+                    (click)="AddToCart($event, item.itemId)"
+                  >
+                    Add
+                  </button>
+                  <button
+                    [id]="item.itemId"
+                    (click)="DropFromCart($event, item.itemId)"
+                  >
+                    sub
+                  </button>
+                </div>
+              </td>
+              <td>
+                <a (click)="dropItem(item.itemId)" class="icon">
+                  <i class="ti-close"></i>
+                </a>
+              </td>
+              <td>
+                <h2 class="td-color">{{ item.itemTotalPrice | currency }}</h2>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="table cart-table table-responsive-md">
+          <tfoot>
+            <tr>
+              <td>total price :</td>
+              <td>
+                <h2>{{ Cart?.TotalPrice | currency }}</h2>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+    <div class="row cart-buttons">
+      <div class="col-6">
+        <a href="#" class="btn btn-solid">continue shopping</a>
+      </div>
+      <div class="col-6"><a href="#" class="btn btn-solid">check out</a></div>
+    </div>
+  </div>
+</section>
+<!--section end-->

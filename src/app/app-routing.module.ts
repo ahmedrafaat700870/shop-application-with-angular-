@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './cart/cart.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
-import { HomeComponent } from './home/home.component';
-import { ItemDetailsComponent } from './item-details/item-details.component';
-import { ItemComponent } from './item/item.component';
-
+import { MainHomeComponent } from './Home/main-home/main-home.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CheckOutComponent } from './check-out/check-out.component';
 const routes: Routes = [
-  { path: 'Home', component: HomeComponent },
-  { path: 'Item', component: ItemComponent },
-  { path: 'ItemDetails/:id', component: ItemDetailsComponent },
+  { path: 'Home', component: MainHomeComponent },
+  { path: 'ProductDetails/:id', component: ProductDetailsComponent },
+  { path: 'Cart/:id', component: CartComponent },
+  { path: 'CheckOut', component: CheckOutComponent },
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: '**', component: ErrorPageComponent },
 ];

@@ -1,0 +1,19 @@
+<!-- product section -->
+<section class="ratio_square">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="title4">
+          <h2 class="title-inner4">trending products</h2>
+          <div class="line"><span></span></div>
+        </div>
+        <div class="product-4 product-m no-arrow">
+          <div class="product-box product-wrap" *ngFor="let item; for: items">
+            <app-product [item]="item"></app-product>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- product section end -->

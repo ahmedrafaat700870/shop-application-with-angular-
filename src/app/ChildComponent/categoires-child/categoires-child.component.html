@@ -1,0 +1,33 @@
+<div class="category-wrapper">
+  <div>
+    <div
+      *ngIf="categorie.imageName != null; then thenBlock; else elseBlock"
+    ></div>
+    <ng-template #thenBlock>
+      <div>
+        <img
+          [src]="categorie.imageName"
+          class="img-fluid blur-up lazyload bg-img"
+          alt="Photo"
+        />
+      </div>
+    </ng-template>
+    <ng-template #elseBlock>
+      <div>
+        <img
+          src="../assets/images/watch/cat1.png"
+          class="img-fluid blur-up lazyload bg-img"
+          alt=""
+        />
+      </div>
+    </ng-template>
+    <h4>watch models</h4>
+    <ul class="category-link">
+      <li><a href="#">d1 milano</a></li>
+      <li><a href="#">damaskeening</a></li>
+      <li><a href="#">diving watch</a></li>
+      <li><a href="#">dollar watch</a></li>
+    </ul>
+    <a href="#" class="btn btn-outline">categorie</a>
+  </div>
+</div>

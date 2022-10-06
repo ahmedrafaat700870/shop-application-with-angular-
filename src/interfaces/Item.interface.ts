@@ -1,0 +1,41 @@
+import { Data } from '@angular/router';
+import { ICatagories } from './category.interface';
+import { TbCustomer } from './TbCustomer.interface';
+import { TbItemImage } from './TbImages.interface';
+import { TbItemDiscount } from './TbItemDiscount.interface';
+import { IitemType } from './TbItemType.interface';
+import { TbO } from './TbO.interface';
+import { TbPurchaseInvoiceItem } from './TbPurchaseInvoiceItem.interface';
+import { TbSalesInvoiceItem } from './TbSalesInvoiceItem.interface';
+
+export interface IItem {
+  itemId: number;
+  itemName: string;
+  salesPrice: number;
+  purchasePrice: number;
+  categoryId: number;
+  imageName?: string;
+  createdDate: Data;
+  createdBy?: string;
+  currentState?: number;
+  updatedBy?: string;
+  updatedDate?: Date;
+  description?: string;
+  gpu?: string;
+  hardDisk?: string;
+  itemTypeId?: number;
+  processor?: string;
+  ramSize?: number;
+  screenReslution?: string;
+  screenSize?: string;
+  weight?: string;
+  osId?: number;
+  category?: ICatagories;
+  itemType?: IitemType;
+  os?: TbO;
+  tbItemDiscounts?: Array<TbItemDiscount>;
+  tbItemImages?: Array<TbItemImage>;
+  tbPurchaseInvoiceItems?: Array<TbPurchaseInvoiceItem>;
+  tbSalesInvoiceItems?: Array<TbSalesInvoiceItem>;
+  customers?: Array<TbCustomer>;
+}

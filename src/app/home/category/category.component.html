@@ -1,0 +1,15 @@
+<!-- category -->
+<section class="section-b-space ratio_portrait">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="slide-4 category-m no-arrow">
+          <div *ngFor="let cat of categories">
+            <app-categoires-child [categorie]="cat"></app-categoires-child>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- category end -->
